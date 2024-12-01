@@ -1,3 +1,30 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["assets", "./src/assets"],
+          ["components", "./src/components"],
+          ["configs", "./src/configs"],
+          ["constants", "./src/constants"],
+          ["contexts", "./src/contexts"],
+          ["hooks", "./src/hooks"],
+          ["layouts", "./src/layouts"],
+          ["mocks", "./src/mocks"],
+          ["services", "./src/services"],
+          ["styles", "./src/styles"],
+          ["utils", "./src/utils"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      },
+      "node": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      }
+    },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  }
 }
