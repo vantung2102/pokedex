@@ -18,8 +18,9 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src"],
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
       "configs/*": ["configs/*"],
@@ -29,6 +30,7 @@
       "layouts/*": ["layouts/*"],
       "mocks/*": ["mocks/*"],
       "styles/*": ["styles/*"],
+      "hooks/*": ["./src/hooks/*"],
       "services/*": ["services/*"]
     }
   },

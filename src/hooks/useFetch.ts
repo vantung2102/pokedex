@@ -1,19 +1,17 @@
-import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
+import { useQuery, QueryFunction, UseQueryOptions } from '@tanstack/react-query';
 
-const useFetch = <Data = unknown, Error = unknown>(
-  SWRkey: string,
-  SWRfetcher: (key: string) => Promise<Data>,
-  options?: SWRConfiguration<Data, Error>,
-): SWRResponse<Data, Error> => {
-  const state = useSWR(SWRkey, SWRfetcher, {
-    onError: (error) => {
-      console.log(error);
+export function useFetch(queryKey: any, queryFn: any, options: UseQueryOptions) {
+  const state = useQuery({
+    queryKey,
+    queryFn,
+    onError: (error: any) => {
+      console.error(error);
     },
-    revalidateOnFocus: false,
+    retry: false,
+    cacheTime: 0,
+    refetchOnWindowFocus: false,
     ...options,
   });
 
   return { ...state };
-};
-
-export default useFetch;
+}
