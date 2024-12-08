@@ -21,6 +21,12 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'PokeDex',
   description: 'A simple PokeDex app',
+  icons: [
+    {
+      url: '/images/pokeball.png',
+      href: '/images/pokeball.png',
+    },
+  ],
 };
 
 export default function RootLayout({
